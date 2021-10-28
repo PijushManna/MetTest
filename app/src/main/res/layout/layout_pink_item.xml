@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.mettest.models.Datum" />
+            type="com.example.mettest.models.Item" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,16 +14,15 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:contentDescription="@string/app_name"
             android:id="@+id/item_image"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:contentDescription="@string/app_name"
+            app:imgURL="@{model.productImage}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_foreground"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/item_name"
@@ -37,7 +36,8 @@
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toEndOf="@+id/item_image"
             app:layout_constraintTop_toTopOf="parent"
-     />
+            android:text="@{model.productName}"
+        />
 
         <TextView
             android:id="@+id/item_category"
@@ -48,7 +48,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/item_name"
-            app:layout_constraintTop_toBottomOf="@+id/item_name" />
+            app:layout_constraintTop_toBottomOf="@+id/item_name"
+            android:text="@{model.categoryName}"/>
 
         <TextView
             android:id="@+id/item_price"
@@ -60,14 +61,17 @@
             app:layout_constraintTop_toBottomOf="@+id/item_category"
             app:layout_constraintVertical_bias="0.539"
             tools:text="@tools:sample/us_zipcodes"
+            app:price="@{model.price}"
        />
 
         <TextView
             android:id="@+id/item_count"
             android:layout_width="40dp"
             android:layout_height="0dp"
+            android:background="@color/pink_200"
             android:gravity="center"
             android:padding="4dp"
+            android:text="@string/_0"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/item_sub"
             app:layout_constraintEnd_toStartOf="@+id/item_add"

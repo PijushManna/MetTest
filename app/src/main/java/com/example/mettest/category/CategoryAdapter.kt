@@ -1,4 +1,4 @@
-package com.example.mettest
+package com.example.mettest.category
 
 import android.os.Bundle
 import android.os.Parcelable

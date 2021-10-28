@@ -1,4 +1,4 @@
-# MetTest
+# Pink Deliveries
 
 Pink Delivery items. 
 Please use this link to download the app. 

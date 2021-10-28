@@ -21,7 +21,7 @@ class CategoryAdapter(fm:FragmentManager,private val items:List<Datum>) : Fragme
     }
 
     override fun getPageTitle(position: Int): CharSequence {
-        return items[position].catName
+        return items[position].catName.toString()
     }
 
     override fun saveState(): Parcelable? {

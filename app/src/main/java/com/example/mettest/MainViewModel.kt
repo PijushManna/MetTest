@@ -32,9 +32,8 @@ class MainViewModel : ViewModel() {
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.POST, postUrl, postData,
             { response ->
-                Log.i("Response",response.toString())
                 val res = gson.fromJson(response.toString(), PinkItems::class.java)
-                data.value = res.result.data
+                data.value = res.result?.data
             }
         ) { error ->
             error.printStackTrace()
